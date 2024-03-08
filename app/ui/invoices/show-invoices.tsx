@@ -1,15 +1,46 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import InvoicesTable from "./invoice-table";
 import { createClient } from "@/utils/supabase/client";
 
+// Define the Invoice type
+interface Invoice {
+  id: number;
+  customerName: string;
+  image_url: string;
+  email: string;
+  amount: number;
+  date: string;
+  dueBy: string;
+  status: string;
+}
+
 const supabase = createClient();
 
-const ShowInvoices = async () => {
-  const { data: invoices } = await supabase.from("invoices").select();
+const ShowInvoices = () => {
+  const [invoices, setInvoices] = useState<Invoice[] | null>(null);
+
+  useEffect(() => {
+    const fetchInvoices = async () => {
+      const { data, error } = await supabase.from("invoices").select();
+      if (error) {
+        console.error("Error fetching invoices:", error.message);
+      } else {
+        setInvoices(data || []);
+      }
+    };
+
+    fetchInvoices();
+  }, []);
 
   return (
     <div>
-      <InvoicesTable invoices={invoices} />
+      {invoices !== null ? (
+        <InvoicesTable invoices={invoices} />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

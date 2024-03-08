@@ -3,7 +3,23 @@ import InvoiceStatus from "./status";
 import Image from "next/image";
 import Link from "next/link";
 
-const InvoicesTable = ({ invoices }) => {
+// Define interface for invoice object
+interface Invoice {
+  id: number;
+  customerName: string;
+  image_url: string;
+  email: string;
+  amount: number;
+  date: string;
+  dueBy: string;
+  status: string;
+}
+
+interface Props {
+  invoices: Invoice[];
+}
+
+const InvoicesTable: React.FC<Props> = ({ invoices }) => {
   return (
     <div className="mt-6 flow-root">
       <Link href="/dashboard/invoices/create">Create Invoice!</Link>
