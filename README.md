@@ -9,6 +9,7 @@ Dette prosjektet er hovedsakelig dedikert til å utforske NextJS og React. Form�
 Prosjektet er en nettbasert faktureringsplattform som tilbyr følgende funksjonaliteter:
 
 - **Kundeadministrasjon:**
+
   - Visning og modifikasjon av kundedetaljer inkludert navn, profilbilde, epost, antall tidligere fakturaer og gjeldende antall fakturaer.
 
 - **Fakturahåndtering:**
@@ -19,6 +20,7 @@ Prosjektet er en nettbasert faktureringsplattform som tilbyr følgende funksjona
 Prosjektet er bygget ved hjelp av følgende teknologier:
 
 - **Frontend:**
+
   - React
   - NextJS
 
@@ -26,10 +28,12 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
   - MySQL2
 
 ## Guide og liknende
-https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4 
+
+https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4
 
 ###### Nettadressen for å komme på nettsiden, må være på skole nettverket
-http://172.20.128.41
+
+*https://invoicepro-v2.vercel.app/*
 
 <br><br><br><br><br><br><br>
 
@@ -40,45 +44,51 @@ http://172.20.128.41
 **Prosjektnavn:** Alsos Invoice Pro  
 **Dato for testing:** 07-03-2024
 
-**Testdeltakerens navn:** Fredrik Alsos 
+**Testdeltakerens navn:** Fredrik Alsos
 **Alder:** 17  
 **Yrkesbakgrunn:** Sy Elev  
 **Tidligere erfaring med lignende systemer:** Har ingen tidligere erfaring med lignende systemer.
 
 #### Oppgave 1: Finne fram til faktura/invoices siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Fredrik navigerte til og gjennom skjemaet i moderat hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
 #### Oppgave 2: Se på oversikten over registrerte fakturaer:
 
 **Observasjoner:**
+
 - Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte fakturaer uten problemer.
 
 #### Oppgave 3: Lag en faktura
 
 **Ovservasjoner**
+
 - Fredrik skjønte utfylling fint og gjennomførte med moderatt hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Fredrik likte hvor oversiktelig det var å legge til en faktura
 
 #### Oppgave 4: Finne fram til kunder/customers siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Fredrik navigerte til og gjennom skjemaet i moderat hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
 #### Oppgave 5: Se på oversikten over registrerte kunder:
 
 **Observasjoner:**
+
 - Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte kunder uten problemer.
 
 #### Oppgave 6: Lag en kunde
 
 **Ovservasjoner**
+
 - Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Fredrik likte hvor oversiktelig det var å legge til en kunde
@@ -113,38 +123,44 @@ http://172.20.128.41
 
 #### Oppgave 1: Finne fram til faktura/invoices siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Fredrik navigerte til og gjennom skjemaet i høy hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
 #### Oppgave 2: Se på oversikten over registrerte fakturaer:
 
 **Observasjoner:**
+
 - Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte fakturaer uten problemer.
 
 #### Oppgave 3: Lag en faktura
 
 **Ovservasjoner**
+
 - Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Fredrik likte hvor oversiktelig det var å legge til en faktura
 
 #### Oppgave 4: Finne fram til kunder/customers siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Fredrik navigerte til og gjennom skjemaet i høy hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
 #### Oppgave 5: Se på oversikten over registrerte kunder:
 
 **Observasjoner:**
+
 - Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte kunder uten problemer.
 
 #### Oppgave 6: Lag en kunde
 
 **Ovservasjoner**
+
 - Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Fredrik likte hvor oversiktelig det var å legge til en kunde
@@ -179,38 +195,44 @@ http://172.20.128.41
 
 #### Oppgave 1: Finne fram til faktura/invoices siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Fredrik navigerte til og gjennom skjemaet i høy hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Jarl Mathias.
 
 #### Oppgave 2: Se på oversikten over registrerte fakturaer:
 
 **Observasjoner:**
+
 - Jarl Mathias reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte fakturaer uten problemer.
 
 #### Oppgave 3: Lag en faktura
 
 **Ovservasjoner**
+
 - Jarl Mathias skjønte utfylling fint og gjennomførte med høy hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Jarl Mathias likte hvor oversiktelig det var å legge til en faktura
 
 #### Oppgave 4: Finne fram til kunder/customers siden:
 
-**Observasjoner:** 
+**Observasjoner:**
+
 - Jarl Mathias navigerte til og gjennom skjemaet i høy hastighet.
 - Ingen felt virket forvirrende eller vanskelige for Jarl Mathias.
 
 #### Oppgave 5: Se på oversikten over registrerte kunder:
 
 **Observasjoner:**
+
 - Jarl Mathias reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
 - Han fikk en god oversikt over registrerte kunder uten problemer.
 
 #### Oppgave 6: Lag en kunde
 
 **Ovservasjoner**
+
 - Jarl Mathias skjønte utfylling fint og gjennomførte med høy hastighet
 - Han syntes alt så fint og profesjonelt ut
 - Jarl Mathias likte hvor oversiktelig det var å legge til en kunde
@@ -234,6 +256,7 @@ http://172.20.128.41
 #### Takk for deltakelsen!
 
 # Framtidige Brukertesting endringer
+
 - Gjør "Create ..." knappene bedre med plassering og farger.
 - Få endre fakturaer og kunder
 - Få slette fakturaer og kunder
