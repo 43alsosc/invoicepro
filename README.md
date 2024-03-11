@@ -23,9 +23,10 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 
   - React
   - NextJS
+  - Vercel.com
 
 - **Backend:**
-  - MySQL2
+  - SupaBase.com
 
 ## Guide og liknende
 
