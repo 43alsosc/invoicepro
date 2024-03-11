@@ -13,6 +13,7 @@ interface Customer {
   total_invoices: number;
   total_pending: number;
   total_paid: number;
+  total_overdue: number;
 }
 
 const supabase = createClient();

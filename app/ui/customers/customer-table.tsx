@@ -10,6 +10,7 @@ interface Customer {
   total_invoices: number;
   total_pending: number;
   total_paid: number;
+  total_overdue: number;
 }
 
 interface Props {
@@ -52,6 +53,9 @@ const CustomersTable: React.FC<Props> = ({ customers }) => {
               <th scope="col" className="px-3 py-5 font-medium text-center">
                 Total Paid
               </th>
+              <th scope="col" className="px-3 py-5 font-medium text-center">
+                Total Overdue
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white">
@@ -84,6 +88,9 @@ const CustomersTable: React.FC<Props> = ({ customers }) => {
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   {customer.total_paid}
+                </td>
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                  {customer.total_overdue}
                 </td>
               </tr>
             ))}
