@@ -10,10 +10,6 @@ interface Customer {
   customerName: string;
   image_url: string;
   email: string;
-  total_invoices: number;
-  total_pending: number;
-  total_paid: number;
-  total_overdue: number;
 }
 
 const supabase = createClient();
