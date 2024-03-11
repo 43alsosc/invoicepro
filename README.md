@@ -29,9 +29,10 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 
 ## Guide og liknende
 
-https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4
+*[Notion Guide](https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4)*
 
-*https://invoicepro-v2.vercel.app/*
+*[Klikk for å gå til nettsiden](https://invoicepro-v2.vercel.app/)*
+
 
 <br><br><br><br><br><br><br>
 
