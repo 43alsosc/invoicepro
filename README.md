@@ -31,8 +31,6 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 
 https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4
 
-###### Nettadressen for å komme på nettsiden, må være på skole nettverket
-
 *https://invoicepro-v2.vercel.app/*
 
 <br><br><br><br><br><br><br>
