@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Define interface for customer object
 interface Customer {
@@ -20,6 +21,7 @@ const CustomersTable: React.FC<Props> = ({ customers }) => {
 
   return (
     <div className="mt-6 flow-root">
+      <Link href="/dashboard/invoices/create">Create Invoice!</Link>
       <div className="inline-block min-w-full align-middle"></div>
       {/* Container for the customer table */}
       <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
