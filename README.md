@@ -1,93 +1,241 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# NextJs MySQL Database Connection
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+## Prosjektoversikt
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+Dette prosjektet er hovedsakelig dedikert til å utforske NextJS og React. Formålet er å styrke min kompetanse innenfor disse rammeverkene.
 
-## Features
+## Funksjonaliteter
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+Prosjektet er en nettbasert faktureringsplattform som tilbyr følgende funksjonaliteter:
 
-## Demo
+- **Kundeadministrasjon:**
+  - Visning og modifikasjon av kundedetaljer inkludert navn, profilbilde, epost, antall tidligere fakturaer og gjeldende antall fakturaer.
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+- **Fakturahåndtering:**
+  - Visning og modifikasjon av fakturadetaljer inkludert faktura-ID, navn, epost, opprettelsesdato, forfallsdato, beløp og fakturastatus (avventende, betalt, forfalt).
 
-## Deploy to Vercel
+## Teknologier
 
-Vercel deployment will guide you through creating a Supabase account and project.
+Prosjektet er bygget ved hjelp av følgende teknologier:
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+- **Frontend:**
+  - React
+  - NextJS
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This%20starter%20configures%20Supabase%20Auth%20to%20use%20cookies%2C%20making%20the%20user's%20session%20available%20throughout%20the%20entire%20Next.js%20app%20-%20Client%20Components%2C%20Server%20Components%2C%20Route%20Handlers%2C%20Server%20Actions%20and%20Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
+- **Backend:**
+  - MySQL2
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+## Guide og liknende
+https://alsos.notion.site/Alsos-Invoices-a26f7b526285423ea864a51e2fb9ba6a?pvs=4 
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+###### Nettadressen for å komme på nettsiden, må være på skole nettverket
+http://172.20.128.41
 
-## Clone and run locally
+<br><br><br><br><br><br><br>
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+## Brukertesting
 
-2. Create a Next.js app using the Supabase Starter template npx command
+# Testdeltaker 1:
 
-   ```bash
-   npx create-next-app -e with-supabase
-   ```
+**Prosjektnavn:** Alsos Invoice Pro  
+**Dato for testing:** 07-03-2024
 
-3. Use `cd` to change into the app's directory
+**Testdeltakerens navn:** Fredrik Alsos 
+**Alder:** 17  
+**Yrkesbakgrunn:** Sy Elev  
+**Tidligere erfaring med lignende systemer:** Har ingen tidligere erfaring med lignende systemer.
 
-   ```bash
-   cd name-of-new-app
-   ```
+#### Oppgave 1: Finne fram til faktura/invoices siden:
 
-4. Rename `.env.local.example` to `.env.local` and update the following:
+**Observasjoner:** 
+- Fredrik navigerte til og gjennom skjemaet i moderat hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
+#### Oppgave 2: Se på oversikten over registrerte fakturaer:
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
+**Observasjoner:**
+- Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte fakturaer uten problemer.
 
-5. You can now run the Next.js local development server:
+#### Oppgave 3: Lag en faktura
 
-   ```bash
-   npm run dev
-   ```
+**Ovservasjoner**
+- Fredrik skjønte utfylling fint og gjennomførte med moderatt hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Fredrik likte hvor oversiktelig det var å legge til en faktura
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+#### Oppgave 4: Finne fram til kunder/customers siden:
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+**Observasjoner:** 
+- Fredrik navigerte til og gjennom skjemaet i moderat hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Fredrik.
 
-## Feedback and issues
+#### Oppgave 5: Se på oversikten over registrerte kunder:
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+**Observasjoner:**
+- Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte kunder uten problemer.
 
-## More Supabase examples
+#### Oppgave 6: Lag en kunde
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+**Ovservasjoner**
+- Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Fredrik likte hvor oversiktelig det var å legge til en kunde
+
+#### Tilbakemeldinger:
+
+- Hva likte Fredrik best med systemet? Fredrik likte den enkle navigasjonen og de tydelige oversiktenene og knappene for å finne fram og lage kunder og fakturaer.
+- Hva var mest utfordrende eller forvirrende? Fredrik fant ingen utfordringer eller forvirrende elementer.
+- Eventuelle forslag til forbedringer: Home siden var tom, vil gjerne at denne skal fylles ut.
+
+#### Generelle spørsmål:
+
+- Hvordan vil du beskrive din generelle opplevelse med systemet? Fredrik beskriver opplevelsen som svært positiv og intuitiv.
+- På en skala fra 1 til 10, hvor enkelt var det å bruke systemet? Fredrik gir en score på 8.
+- Vil du ha noen endringer eller tillegg til funksjonaliteten? Fredrik ønsker at hjem/home-siden skal bli utviklet.
+
+#### Avslutning:
+
+- Er det noe annet du ønsker å legge til eller kommentere? Fredrik har ingen ytterligere kommentarer.
+
+#### Takk for deltakelsen!
+
+# Testdeltaker 2:
+
+**Prosjektnavn:** Alsos Invoice Pro  
+**Dato for testing:** 07-03-2024
+
+**Testdeltakerens navn:** Fredrik Inpitak
+**Alder:** 17
+**Yrkesbakgrunn:** IT-elev  
+**Tidligere erfaring med lignende systemer:** Har ingen erfaring med lignende systemer.
+
+#### Oppgave 1: Finne fram til faktura/invoices siden:
+
+**Observasjoner:** 
+- Fredrik navigerte til og gjennom skjemaet i høy hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Fredrik.
+
+#### Oppgave 2: Se på oversikten over registrerte fakturaer:
+
+**Observasjoner:**
+- Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte fakturaer uten problemer.
+
+#### Oppgave 3: Lag en faktura
+
+**Ovservasjoner**
+- Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Fredrik likte hvor oversiktelig det var å legge til en faktura
+
+#### Oppgave 4: Finne fram til kunder/customers siden:
+
+**Observasjoner:** 
+- Fredrik navigerte til og gjennom skjemaet i høy hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Fredrik.
+
+#### Oppgave 5: Se på oversikten over registrerte kunder:
+
+**Observasjoner:**
+- Fredrik reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte kunder uten problemer.
+
+#### Oppgave 6: Lag en kunde
+
+**Ovservasjoner**
+- Fredrik skjønte utfylling fint og gjennomførte med høy hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Fredrik likte hvor oversiktelig det var å legge til en kunde
+
+#### Tilbakemeldinger:
+
+- Hva likte Carl Oscar best med systemet? Fredrik likte den klare strukturen, men ønsket mulighetenr for å endre og slette kunder og fakturaer.
+- Hva var mest utfordrende eller forvirrende? Ingenting var forvirrende for Fredrik.
+- Eventuelle forslag til forbedringer: Fredrik foreslår muligheter for å slette og endre kunder og fakturaer.
+
+#### Generelle spørsmål:
+
+- Hvordan vil du beskrive din generelle opplevelse med systemet? Fredrik beskriver opplevelsen som positiv, men med noen forbedringspunkter.
+- På en skala fra 1 til 10, hvor enkelt var det å bruke systemet? Fredrik gir en score på 7.
+- Vil du ha noen endringer eller tillegg til funksjonaliteten? Fredrik ønsker å endre/slette kunder og fakturaer.
+
+#### Avslutning:
+
+- Er det noe annet du ønsker å legge til eller kommentere? Nei, Fredrik har ikke noe mer å kommentere.
+
+#### Takk for deltakelsen!
+
+# Testdeltaker 3:
+
+**Prosjektnavn:** Alsos Invoice Pro  
+**Dato for testing:** 07-03-2024
+
+**Testdeltakerens navn:** Jarl Mathias Ellefsen
+**Alder:** 17  
+**Yrkesbakgrunn:** IT-Elev
+**Tidligere erfaring med lignende systemer:** Ingen tidligere erfaring med lignende systemer.
+
+#### Oppgave 1: Finne fram til faktura/invoices siden:
+
+**Observasjoner:** 
+- Fredrik navigerte til og gjennom skjemaet i høy hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Jarl Mathias.
+
+#### Oppgave 2: Se på oversikten over registrerte fakturaer:
+
+**Observasjoner:**
+- Jarl Mathias reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte fakturaer uten problemer.
+
+#### Oppgave 3: Lag en faktura
+
+**Ovservasjoner**
+- Jarl Mathias skjønte utfylling fint og gjennomførte med høy hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Jarl Mathias likte hvor oversiktelig det var å legge til en faktura
+
+#### Oppgave 4: Finne fram til kunder/customers siden:
+
+**Observasjoner:** 
+- Jarl Mathias navigerte til og gjennom skjemaet i høy hastighet.
+- Ingen felt virket forvirrende eller vanskelige for Jarl Mathias.
+
+#### Oppgave 5: Se på oversikten over registrerte kunder:
+
+**Observasjoner:**
+- Jarl Mathias reagerte positivt på tabellen og syntes informasjonen var lett å forstå.
+- Han fikk en god oversikt over registrerte kunder uten problemer.
+
+#### Oppgave 6: Lag en kunde
+
+**Ovservasjoner**
+- Jarl Mathias skjønte utfylling fint og gjennomførte med høy hastighet
+- Han syntes alt så fint og profesjonelt ut
+- Jarl Mathias likte hvor oversiktelig det var å legge til en kunde
+
+#### Tilbakemeldinger:
+
+- Hva likte Jarl Mathias best med systemet? Jarl Mathias likte oversikten, men ønsket bedre design og muligheter for å slette/endre kunder og fakturaer.
+- Hva var mest utfordrende eller forvirrende? Ingenting var forrvirrende for Jarl Mathias
+- Eventuelle forslag til forbedringer: Jarl Mathias foreslår endring av "Create ..." knappene for å se enda bedre ot, og legge til sletting og redigering av kunder og fakturaer.
+
+#### Generelle spørsmål:
+
+- Hvordan vil du beskrive din generelle opplevelse med systemet? Jarl Mathias beskriver opplevelsen som lite utfordrende.
+- På en skala fra 1 til 10, hvor enkelt var det å bruke systemet? Jarl Mathias gir en score på 6.
+- Vil du ha noen endringer eller tillegg til funksjonaliteten? Jarl Mathias ønsker en hjem-side med innhold.
+
+#### Avslutning:
+
+- Nei
+
+#### Takk for deltakelsen!
+
+# Framtidige Brukertesting endringer
+- Gjør "Create ..." knappene bedre med plassering og farger.
+- Få endre fakturaer og kunder
+- Få slette fakturaer og kunder
+- Få fikset en home side som viser mer om hva nettsiden er og hva selskapet står for.
+-
