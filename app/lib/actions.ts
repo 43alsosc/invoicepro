@@ -2,7 +2,7 @@
 import { z } from 'zod';
 
 // Importing the query function from the db module
-import { query } from '@/db';
+// import { query } from '@/db';
 
 // Importing revalidatePath and unstable_noStore as noStore functions from next/cache module
 import { revalidatePath } from 'next/cache';
@@ -11,7 +11,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 // Importing redirect function from next/navigation module
 import { redirect } from 'next/navigation';
 
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/utils/supabase/client';
 
 // Defining a FormSchema using zod, specifying the shape of form fields
 const FormSchema = z.object({
@@ -51,6 +51,7 @@ export type State = {
 };
 
 // Asynchronous function to create an invoice, takes previous state and form data as parameters
+// Oppdatert for SupaBase
 export async function createInvoice(prevState: State, formData: FormData) {
 
     console.log("DETTE ER I CREATEINVOICE")
@@ -138,89 +139,89 @@ export async function createInvoice(prevState: State, formData: FormData) {
 }
 
 // Asynchronous function to update an invoice, takes id, previous state, and form data as parameters
-export async function updateInvoice(
-    id: string,
-    prevState: State,
-    formData: FormData,
-) {
-    // Parsing and validating form data against UpdateInvoice schema
-    const validatedFields = UpdateInvoice.safeParse({
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
-    });
+// export async function updateInvoice(
+//     id: string,
+//     prevState: State,
+//     formData: FormData,
+// ) {
+//     // Parsing and validating form data against UpdateInvoice schema
+//     const validatedFields = UpdateInvoice.safeParse({
+//         customerId: formData.get('customerId'),
+//         amount: formData.get('amount'),
+//         status: formData.get('status'),
+//     });
 
-    // Handling validation errors
-    if (!validatedFields.success) {
-        return {
-            errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Update Invoice.',
-        };
-    }
+//     // Handling validation errors
+//     if (!validatedFields.success) {
+//         return {
+//             errors: validatedFields.error.flatten().fieldErrors,
+//             message: 'Missing Fields. Failed to Update Invoice.',
+//         };
+//     }
 
-    // Destructuring validated data
-    const { customerId, amount, status } = validatedFields.data;
-    const amountInCents = amount * 100;  // Converting amount to cents
+//     // Destructuring validated data
+//     const { customerId, amount, status } = validatedFields.data;
+//     const amountInCents = amount * 100;  // Converting amount to cents
 
-    try {
-        // Constructing SQL prepared statement for update
-        const preparedStatement = `UPDATE invoices
-            SET customer_id = ?, amount = ?, status = ?
-            WHERE id = ?`;
-        const values = [customerId, amountInCents, status, id];
-        // Executing SQL query with prepared statement and values
-        await query(preparedStatement, values);
-    } catch (error) {
-        // Handling database errors
-        console.error('Database Error:', error);
-        return { message: 'Database Error: Failed to Update Invoice.' };
-    }
+//     try {
+//         // Constructing SQL prepared statement for update
+//         const preparedStatement = `UPDATE invoices
+//             SET customer_id = ?, amount = ?, status = ?
+//             WHERE id = ?`;
+//         const values = [customerId, amountInCents, status, id];
+//         // Executing SQL query with prepared statement and values
+//         await query(preparedStatement, values);
+//     } catch (error) {
+//         // Handling database errors
+//         console.error('Database Error:', error);
+//         return { message: 'Database Error: Failed to Update Invoice.' };
+//     }
 
-    // Revalidating path and redirecting
-    revalidatePath('/dashboard/invoices');
-    redirect('/dashboard/invoices');
-}
+//     // Revalidating path and redirecting
+//     revalidatePath('/dashboard/invoices');
+//     redirect('/dashboard/invoices');
+// }
 
 // Asynchronous function to fetch an invoice by id
-export async function fetchInvoiceById(id: string) {
-    noStore();  // Indicating no caching for this request
-    try {
-        // Querying database to fetch invoice data
-        const data = await query(`SELECT invoices.id, invoices.customerName, invoices.amount, invoices.status FROM invoices WHERE invoices.id = ?`, [id]);
-        // Mapping and formatting fetched invoice data
-        const invoice = data.map((invoice: { amount: any; }) => ({
-            ...invoice,
-            amount: invoice.amount,
-        }));
+// export async function fetchInvoiceById(id: string) {
+//     noStore();  // Indicating no caching for this request
+//     try {
+//         // Querying database to fetch invoice data
+//         const data = await query(`SELECT invoices.id, invoices.customerName, invoices.amount, invoices.status FROM invoices WHERE invoices.id = ?`, [id]);
+//         // Mapping and formatting fetched invoice data
+//         const invoice = data.map((invoice: { amount: any; }) => ({
+//             ...invoice,
+//             amount: invoice.amount,
+//         }));
 
-        console.log(invoice);  // Logging fetched invoice data
-        return invoice[0];  // Returning first item of fetched invoices
-    } catch (error) {
-        // Handling database errors
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch invoice.');
-    }
-}
+//         console.log(invoice);  // Logging fetched invoice data
+//         return invoice[0];  // Returning first item of fetched invoices
+//     } catch (error) {
+//         // Handling database errors
+//         console.error('Database Error:', error);
+//         throw new Error('Failed to fetch invoice.');
+//     }
+// }
 
 // Asynchronous function to fetch all customers
-export async function fetchCustomers() {
-    noStore();
-    try {
-        // Querying database to fetch all customer data
-        const data = await query(`SELECT customers.id, customers.customerName, customers.email FROM customers ORDER BY customerName ASC`);
-        const customers = data.map((customer: { id: number; customerName: string; email: string; }) => ({
-            ...customer,
-            id: customer.id,
-            customerName: customer.customerName,
-            email: customer.email,
-        }));  // Storing fetched customer data
-        return customers;  // Returning fetched customers
-    } catch (err) {
-        // Handling database errors
-        console.error('Database Error:', err);
-        throw new Error('Failed to fetch all customers.');
-    }
-}
+// export async function fetchCustomers() {
+//     noStore();
+//     try {
+//         // Querying database to fetch all customer data
+//         const data = await query(`SELECT customers.id, customers.customerName, customers.email FROM customers ORDER BY customerName ASC`);
+//         const customers = data.map((customer: { id: number; customerName: string; email: string; }) => ({
+//             ...customer,
+//             id: customer.id,
+//             customerName: customer.customerName,
+//             email: customer.email,
+//         }));  // Storing fetched customer data
+//         return customers;  // Returning fetched customers
+//     } catch (err) {
+//         // Handling database errors
+//         console.error('Database Error:', err);
+//         throw new Error('Failed to fetch all customers.');
+//     }
+// }
 
 // export async function createCustomer(prevState: State, formData: FormData) {
 //     // Parsing and validating form data against CreateInvoice schema
