@@ -10,8 +10,7 @@ Prosjektet er en nettbasert faktureringsplattform som tilbyr følgende funksjona
 
 - **Kundeadministrasjon:**
 
-  - Visning og modifikasjon av kundedetaljer inkludert navn, profilbilde, epost, antall tidligere fakturaer og gjeldende antall fakturaer.
-
+  - Visning og modifikasjon av kundedetaljer inkludert navn, profilbilde, epost
 - **Fakturahåndtering:**
   - Visning og modifikasjon av fakturadetaljer inkludert faktura-ID, navn, epost, opprettelsesdato, forfallsdato, beløp og fakturastatus (avventende, betalt, forfalt).
 
