@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import CustomersTable from "./customer-table";
 import { createClient } from "@/utils/supabase/client";
