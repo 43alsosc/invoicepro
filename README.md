@@ -110,6 +110,8 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 
 #### Takk for deltakelsen!
 
+<br><br><br>
+
 # Testdeltaker 2:
 
 **Prosjektnavn:** Alsos Invoice Pro  
@@ -182,6 +184,8 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 
 #### Takk for deltakelsen!
 
+<br><br><br>
+
 # Testdeltaker 3:
 
 **Prosjektnavn:** Alsos Invoice Pro  
@@ -253,6 +257,8 @@ Prosjektet er bygget ved hjelp av følgende teknologier:
 - Nei
 
 #### Takk for deltakelsen!
+
+<br><br><br>
 
 # Framtidige Brukertesting endringer
 
