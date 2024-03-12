@@ -1,3 +1,14 @@
+export interface Invoice {
+  id: number;
+  customerName: string;
+  image_url: string;
+  email: string;
+  amount: number;
+  date: string;
+  dueBy: string;
+  status: string;
+}
+
 export type InvoicesTable = {
   id: string;
   customer_id: string;
@@ -9,6 +20,19 @@ export type InvoicesTable = {
   status: 'pending' | 'paid' | 'overdue';
 };
 
+export type InvoiceForm = {
+  id: string;
+  customerName: string;
+  amount: number;
+  status: 'pending' | 'paid' | 'overdue';
+};
+
+export interface Customer {
+  id: number;
+  customerName: string;
+  image_url: string;
+  email: string;
+}
 export type CustomersTable = {
   id: string;
   name: string;
@@ -25,12 +49,4 @@ export type CustomerField = {
   customerName: string;
   email: string;
   image_url: string;
-};
-
-
-export type InvoiceForm = {
-  id: string;
-  customerName: string;
-  amount: number;
-  status: 'pending' | 'paid' | 'overdue';
 };

@@ -3,14 +3,7 @@
 import React, { useState, useEffect } from "react";
 import CustomersTable from "./customer-table";
 import { createClient } from "@/utils/supabase/client";
-
-// Define the Customer type
-interface Customer {
-  id: number;
-  customerName: string;
-  image_url: string;
-  email: string;
-}
+import { Customer } from "@/app/lib/definitions";
 
 const supabase = createClient();
 

@@ -3,18 +3,7 @@
 import { useState, useEffect } from "react";
 import InvoicesTable from "./invoice-table";
 import { createClient } from "@/utils/supabase/client";
-
-// Define the Invoice type
-interface Invoice {
-  id: number;
-  customerName: string;
-  image_url: string;
-  email: string;
-  amount: number;
-  date: string;
-  dueBy: string;
-  status: string;
-}
+import { Invoice } from "@/app/lib/definitions";
 
 const supabase = createClient();
 
