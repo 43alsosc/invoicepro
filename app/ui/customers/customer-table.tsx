@@ -21,7 +21,7 @@ const CustomersTable: React.FC<Props> = ({ customers }) => {
 
   return (
     <div className="mt-6 flow-root">
-      <Link href="/dashboard/invoices/create">Create Invoice!</Link>
+      <Link href="/dashboard/customers/create">Add Customer!</Link>
       <div className="inline-block min-w-full align-middle"></div>
       {/* Container for the customer table */}
       <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
