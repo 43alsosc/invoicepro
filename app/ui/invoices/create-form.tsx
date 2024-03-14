@@ -15,11 +15,18 @@ import { NoSsr, TextField, TextFieldProps } from "@mui/material";
 const supabase = createClient();
 
 export default function Form() {
+  // State variables for data fields from forms
   const [customers, setCustomers] = useState<any[]>([]);
   const [selectedCustomerId, setSelectedCustomerId] = useState("");
   const [amount, setAmount] = useState(0);
   const [status, setStatus] = useState("");
   const [dueDate, setDueDate] = useState<Date | null>(null);
+
+  // State variables for error messages
+  const [customerIdError, setCustomerIdError] = useState("");
+  const [amountError, setAmountError] = useState("");
+  const [statusError, setStatusError] = useState("");
+  const [dueDateError, setDueDateError] = useState("");
 
   useEffect(() => {
     const fetchCustomers = async () => {
@@ -53,6 +60,31 @@ export default function Form() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Clear previous error messages
+    setCustomerIdError("");
+    setAmountError("");
+    setStatusError("");
+    setDueDateError("");
+
+    // Validation checks
+    if (!selectedCustomerId) {
+      setCustomerIdError("Customer ID is required.");
+    }
+    if (amount <= 0) {
+      setAmountError("Amount must be greater than 0.");
+    }
+    if (!status) {
+      setStatusError("Status is required.");
+    }
+    if (!dueDate) {
+      setDueDateError("Due date is required.");
+    }
+
+    if (customerIdError || amountError || statusError || dueDateError) {
+      return;
+    }
+
+    // Insert the invoice into the database
     const { error } = await supabase.from("invoices").insert([
       {
         customer_id: selectedCustomerId,
@@ -63,7 +95,16 @@ export default function Form() {
       },
     ]);
 
-    if (error) console.error("Error creating invoice:", error);
+    // Log any errors
+    if (error) {
+      console.error("Error creating invoice:", error);
+    } else {
+      // Clear the form fields
+      setSelectedCustomerId("");
+      setAmount(0);
+      setStatus("");
+      setDueDate(null);
+    }
   };
 
   return (
@@ -96,6 +137,9 @@ export default function Form() {
           </div>
           <div id="customer-error" aria-live="polite" aria-atomic="true">
             {/* Customer error */}
+            {customerIdError && (
+              <div style={{ color: "red" }}>{customerIdError}</div>
+            )}
           </div>
         </div>
 
@@ -113,6 +157,9 @@ export default function Form() {
             className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
             onChange={handleAmountChange}
           />
+          <div>
+            {amountError && <div style={{ color: "red" }}>{amountError}</div>}
+          </div>
         </div>
 
         {/* Status */}
@@ -153,6 +200,9 @@ export default function Form() {
               <span className="ml-2">Overdue</span>
             </label>
           </div>
+          <div>
+            {statusError && <div style={{ color: "red" }}>{statusError}</div>}
+          </div>
         </div>
 
         {/* Due Date */}
@@ -168,6 +218,9 @@ export default function Form() {
             }}
             onChange={handledueDateChange}
           />
+        </div>
+        <div>
+          {dueDateError && <div style={{ color: "red" }}>{dueDateError}</div>}
         </div>
 
         {/* Submit Button */}
