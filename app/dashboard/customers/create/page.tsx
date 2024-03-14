@@ -1,5 +1,21 @@
+import Form from "@/app/ui/customers/create-form";
+import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
+
 export default function page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <main>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: "Customers", href: "/dashboard/customers" },
+          {
+            label: "Create Customer",
+            href: "/dashboard/customers/create",
+            active: true,
+          },
+        ]}
+      />
+
+      <Form></Form>
+    </main>
   );
 }
