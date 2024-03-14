@@ -52,91 +52,92 @@ export type State = {
 
 // Asynchronous function to create an invoice, takes previous state and form data as parameters
 // Oppdatert for SupaBase
-export async function createInvoice(prevState: State, formData: FormData) {
+// export async function createInvoice(prevState: State, formData: FormData) {
 
-    console.log("DETTE ER I CREATEINVOICE")
+//     console.log("DETTE ER I CREATEINVOICE")
 
-    const formObject = Object.fromEntries(formData.entries());
-    console.log(formObject)
+//     const formObject = Object.fromEntries(formData.entries());
+//     console.log(formObject)
 
-    // Before validating the formObject, add the date
-    formObject.date = new Date().toISOString();
+//     // Before validating the formObject, add the date
+//     formObject.date = new Date().toISOString();
 
-    // 
-    const validatedData = FormSchema.parse(formObject);
-    console.log(validatedData)
+//     // 
+//     const validatedData = FormSchema.parse(formObject);
+//     console.log(validatedData)
 
-    // Parsing and validating form data against CreateInvoice schema
-    console.log("Formdata: ", formData);
-    const validatedFields = CreateInvoice.safeParse({
-        customerId: formData.get('customerId'),
-        amount: formData.get('amount'),
-        status: formData.get('status'),
-    });
+//     // Parsing and validating form data against CreateInvoice schema
+//     console.log("Formdata: ", formData);
+//     const validatedFields = CreateInvoice.safeParse({
+//         customerId: formData.get('customerId') as string,
+//         amount: parseFloat(formData.get('amount') as string),
+//         status: formData.get('status') as 'pending' | 'paid' | 'overdue' // Assuming status is always one of these values
+//     });
 
-    console.log("Validated Fields: ", validatedFields);  // Log validatedFields
 
-    // Handling validation errors
-    if (!validatedFields.success) {
-        console.log("missing fields")
-        return {
-            errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Create Invoice.',
-        };
-    }
+//     console.log("Validated Fields: ", validatedFields);  // Log validatedFields
 
-    // Destructuring validated data
-    const { customerId, amount, status } = validatedFields.data;
+//     // Handling validation errors
+//     if (!validatedFields.success) {
+//         console.log("missing fields")
+//         return {
+//             errors: validatedFields.error.flatten().fieldErrors,
+//             message: 'Missing Fields. Failed to Create Invoice.',
+//         };
+//     }
 
-    const supabase = createClient();
+//     // Destructuring validated data
+//     const { customerId, amount, status } = validatedFields.data;
 
-    try {
-        // Fetching customer details from the database using Supabase
-        const { data: customers, error } = await supabase
-            .from('customers')
-            .select('customerName, image_url, email')
-            .eq('id', customerId);
+//     const supabase = createClient();
 
-        if (error || !customers || customers.length === 0) {
-            console.log("No customer found with ID:", customerId);
-            throw new Error(`No customer found with ID: ${customerId}`);
-        }
+//     try {
+//         // Fetching customer details from the database using Supabase
+//         const { data: customers, error } = await supabase
+//             .from('customers')
+//             .select('customerName, image_url, email')
+//             .eq('id', customerId);
 
-        const { customerName, image_url, email } = customers[0];
+//         if (error || !customers || customers.length === 0) {
+//             console.log("No customer found with ID:", customerId);
+//             throw new Error(`No customer found with ID: ${customerId}`);
+//         }
 
-        // Inserting the invoice using Supabase
-        const { data: insertedInvoice, error: insertError } = await supabase
-            .from('invoices')
-            .insert([
-                {
-                    customerId,
-                    customerName,
-                    image_url,
-                    email,
-                    amount,
-                    dueBy: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000), // 14 days from now
-                    status
-                }
-            ]);
+//         const { customerName, image_url, email } = customers[0];
 
-        if (insertError) {
-            console.error('Database Error:', insertError);
-            return {
-                message: 'Database Error: Failed to Create Invoice.',
-            };
-        }
-    } catch (error) {
-        // Handling database errors
-        console.error('Database Error:', error);
-        return {
-            message: 'Database Error: Failed to Create Invoice.',
-        };
-    }
+//         // Inserting the invoice using Supabase
+//         const { data: insertedInvoice, error: insertError } = await supabase
+//             .from('invoices')
+//             .insert([
+//                 {
+//                     customerId,
+//                     customerName,
+//                     image_url,
+//                     email,
+//                     amount,
+//                     dueBy: new Date(new Date().getTime() + 14 * 24 * 60 * 60 * 1000), // 14 days from now
+//                     status
+//                 }
+//             ]);
 
-    // Revalidating path and redirecting
-    revalidatePath('/dashboard/invoices');
-    redirect('/dashboard/invoices');
-}
+//         if (insertError) {
+//             console.error('Database Error:', insertError);
+//             return {
+//                 message: 'Database Error: Failed to Create Invoice.',
+//             };
+//         }
+//     } catch (error) {
+//         // Handling database errors
+//         console.error('Database Error:', error);
+//         return {
+//             message: 'Database Error: Failed to Create Invoice.',
+//         };
+//     }
+
+//     // Revalidating path and redirecting
+//     revalidatePath('/dashboard/invoices');
+//     redirect('/dashboard/invoices');
+// }
 
 // Asynchronous function to update an invoice, takes id, previous state, and form data as parameters
 // export async function updateInvoice(
@@ -204,24 +205,19 @@ export async function createInvoice(prevState: State, formData: FormData) {
 // }
 
 // Asynchronous function to fetch all customers
-// export async function fetchCustomers() {
-//     noStore();
-//     try {
-//         // Querying database to fetch all customer data
-//         const data = await query(`SELECT customers.id, customers.customerName, customers.email FROM customers ORDER BY customerName ASC`);
-//         const customers = data.map((customer: { id: number; customerName: string; email: string; }) => ({
-//             ...customer,
-//             id: customer.id,
-//             customerName: customer.customerName,
-//             email: customer.email,
-//         }));  // Storing fetched customer data
-//         return customers;  // Returning fetched customers
-//     } catch (err) {
-//         // Handling database errors
-//         console.error('Database Error:', err);
-//         throw new Error('Failed to fetch all customers.');
-//     }
-// }
+export async function fetchCustomers() {
+    const supabase = createClient();
+
+    const { data, error } = await supabase.from("customers").select();
+
+    if (error) {
+        console.error("Error fetching customers:", error);
+        return [];
+    }
+
+    return data;
+
+}
 
 // export async function createCustomer(prevState: State, formData: FormData) {
 //     // Parsing and validating form data against CreateInvoice schema
