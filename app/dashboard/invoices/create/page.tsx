@@ -1,4 +1,4 @@
-import Form from "@/app/ui/invoices/create-form";
+import Form from "@/app/ui/invoices/create/create-form";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { Metadata } from "next";
 import { fetchCustomers } from "@/app/lib/actions";
