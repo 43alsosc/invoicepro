@@ -218,9 +218,9 @@ export default function Form() {
             }}
             onChange={handledueDateChange}
           />
-        </div>
-        <div>
-          {dueDateError && <div style={{ color: "red" }}>{dueDateError}</div>}
+          <div>
+            {dueDateError && <div style={{ color: "red" }}>{dueDateError}</div>}
+          </div>
         </div>
 
         {/* Submit Button */}
