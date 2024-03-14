@@ -12,10 +12,14 @@ import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { NoSsr, TextField, TextFieldProps } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const supabase = createClient();
 
 export default function Form() {
+  // Use the router to redirect the user to the newly created invoice
+  const router = useRouter();
+
   // State variables for data fields from forms
   const [customers, setCustomers] = useState<any[]>([]);
   const [selectedCustomerId, setSelectedCustomerId] = useState("");
@@ -105,6 +109,8 @@ export default function Form() {
       setAmount(0);
       setStatus("");
       setDueDate(null);
+      // Redirect the user to the newly created invoice
+      router.push("/dashboard/invoices");
     }
   };
 
