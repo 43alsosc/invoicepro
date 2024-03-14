@@ -2,10 +2,12 @@ import React from "react";
 import InvoiceStatus from "./status";
 import Image from "next/image";
 import Link from "next/link";
+import { Customer } from "@/app/lib/definitions";
 
 // Define interface for invoice object
 interface Invoice {
   id: number;
+  customer: Customer;
   customerName: string;
   image_url: string;
   email: string;
@@ -41,16 +43,18 @@ const InvoicesTable: React.FC<Props> = ({ invoices }) => {
                     {/* Customer avatar */}
                     <Image
                       alt="bilde"
-                      src={invoice.image_url}
+                      src={invoice.customer.image_url}
                       className="mr-2 rounded-full"
                       width={28}
                       height={28}
                     />
                     {/* Customer name */}
-                    <p>{invoice.customerName}</p>
+                    <p>{invoice.customer.customerName}</p>
                   </div>
                   {/* Customer email */}
-                  <p className="text-sm text-gray-500">{invoice.email}</p>
+                  <p className="text-sm text-gray-500">
+                    {invoice.customer.email}
+                  </p>
                 </div>
                 {/* Status indicator component */}
                 <InvoiceStatus status={invoice.status} />
@@ -105,13 +109,13 @@ const InvoicesTable: React.FC<Props> = ({ invoices }) => {
                   {/* Customer avatar */}
                   <Image
                     alt="bilde"
-                    src={invoice.image_url}
+                    src={invoice.customer.image_url}
                     className="mr-2 rounded-full"
                     width={28}
                     height={28}
                   />
                   {/* Customer name */}
-                  <p>{invoice.customerName}</p>
+                  <p>{invoice.customer.customerName}</p>
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   $ {invoice.amount}

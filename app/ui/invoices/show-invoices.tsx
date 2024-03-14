@@ -12,7 +12,9 @@ const ShowInvoices = () => {
 
   useEffect(() => {
     const fetchInvoices = async () => {
-      const { data, error } = await supabase.from("invoices").select();
+      const { data, error } = await supabase
+        .from("invoices")
+        .select("*, customer:customer_id(image_url, customerName, email)");
       if (error) {
         console.error("Error fetching invoices:", error.message);
       } else {

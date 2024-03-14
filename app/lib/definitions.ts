@@ -1,5 +1,6 @@
 export interface Invoice {
   id: number;
+  customer: Customer;
   customerName: string;
   image_url: string;
   email: string;
