@@ -3,6 +3,7 @@ import InvoiceStatus from "./status";
 import Image from "next/image";
 import Link from "next/link";
 import { Customer } from "@/app/lib/definitions";
+import { PencilIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 
 // Define interface for invoice object
 interface Invoice {
@@ -24,7 +25,28 @@ interface Props {
 const InvoicesTable: React.FC<Props> = ({ invoices }) => {
   return (
     <div className="mt-6 flow-root">
-      <Link href="/dashboard/invoices/create">Create Invoice!</Link>
+      <div className="flex justify-between py-8">
+        <button
+          type="button"
+          data-twe-ripple-init
+          data-twe-ripple-color="light"
+          className="flex items-center rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-primary-2 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none "
+        >
+          <Link href="/dashboard/invoices/create" className="flex">
+            <ClipboardDocumentIcon className="h-4 w-4 mr-2" />
+            Create Invoice!
+          </Link>
+        </button>
+        <button
+          type="button"
+          data-twe-ripple-init
+          data-twe-ripple-color="light"
+          className="flex items-center rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-primary-2 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none "
+        >
+          <PencilIcon className="h-4 w-4 mr-2" />
+          Edit Invoice!
+        </button>
+      </div>
       <div className="inline-block min-w-full align-middle">
         {/* Container for the invoice table, with different layouts for mobile and desktop views */}
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
