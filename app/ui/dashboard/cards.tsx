@@ -1,5 +1,6 @@
 "use client";
 import { createClient } from "@/utils/supabase/client";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
 // import { useEffect, useState } from "react";
 
 const supabase = createClient();
@@ -22,7 +23,8 @@ export const TotalUsersCard = async () => {
           TOTAL USERS
         </div>
         <div className="p-6">
-          <h5 className="mb-2 text-xl font-medium leading-tight text-primary">
+          <h5 className="mb-2 text-xl font-medium leading-tight text-primary align-middle">
+            <UserCircleIcon className="w-6 h-6 inline-block ml-2 align-top" />
             Users
           </h5>
           <p className="text-base text-primary text-center">{count}</p>
