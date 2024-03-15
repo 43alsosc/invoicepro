@@ -23,7 +23,9 @@ export default async function Index() {
         </div>
       </nav>
       <div>
-        <main></main>
+        <main>
+          <h1 className="text-9xl">Velkommen til Invoice Pro!</h1>
+        </main>
       </div>
     </div>
   );
