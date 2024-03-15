@@ -3,7 +3,7 @@ import InvoiceStatus from "./status";
 import Image from "next/image";
 import Link from "next/link";
 import { Customer } from "@/app/lib/definitions";
-import { PencilIcon, ClipboardDocumentIcon } from "@heroicons/react/24/outline";
+import { PencilIcon, PlusIcon } from "@heroicons/react/24/outline";
 
 // Define interface for invoice object
 interface Invoice {
@@ -33,7 +33,7 @@ const InvoicesTable: React.FC<Props> = ({ invoices }) => {
           className="flex items-center rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-primary-2 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none "
         >
           <Link href="/dashboard/invoices/create" className="flex">
-            <ClipboardDocumentIcon className="h-4 w-4 mr-2" />
+            <PlusIcon className="h-4 w-4 mr-2" />
             Create Invoice!
           </Link>
         </button>
