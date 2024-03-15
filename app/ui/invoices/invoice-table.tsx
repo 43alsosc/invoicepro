@@ -43,8 +43,10 @@ const InvoicesTable: React.FC<Props> = ({ invoices }) => {
           data-twe-ripple-color="light"
           className="flex items-center rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-primary-2 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none "
         >
-          <PencilIcon className="h-4 w-4 mr-2" />
-          Edit Invoice!
+          <Link href="/dashboard/invoices/edit" className="flex">
+            <PencilIcon className="h-4 w-4 mr-2" />
+            Edit Invoice!
+          </Link>
         </button>
       </div>
       <div className="inline-block min-w-full align-middle">
