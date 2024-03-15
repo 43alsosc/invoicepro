@@ -8,6 +8,7 @@ import {
 import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "../button";
 
 const supabase = createClient();
 
@@ -165,12 +166,12 @@ export default function Form() {
 
         {/* Submit Button */}
         <div>
-          <button
+          <Button
             type="submit"
             className="py-2 px-4 rounded-md bg-blue-500 text-white"
           >
             Add Customer!
-          </button>
+          </Button>
         </div>
       </div>
     </form>
