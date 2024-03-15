@@ -258,12 +258,12 @@ export default function Form() {
 
         {/* Submit Button */}
         <div>
-          <button
+          <Button
             type="submit"
             className="py-2 px-4 rounded-md bg-blue-500 text-white"
           >
             Create Invoice
-          </button>
+          </Button>
         </div>
       </div>
     </form>
