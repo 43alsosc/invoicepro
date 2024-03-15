@@ -169,7 +169,7 @@ export default function Form() {
             type="submit"
             className="py-2 px-4 rounded-md bg-blue-500 text-white"
           >
-            Create Invoice
+            Add Customer!
           </button>
         </div>
       </div>
