@@ -8,7 +8,7 @@ import {
 import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "../button";
+import { Button } from "../../button";
 
 const supabase = createClient();
 
